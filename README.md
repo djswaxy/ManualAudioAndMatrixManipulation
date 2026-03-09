@@ -1,6 +1,7 @@
 # ManualAudioAndMatrixManipulation
 Manipulating audio manually with matrices in python using numpy and displaying in matplotlib.
 
+by @djswaxy - Emil Østberg, student@Aarhus Universitet
 ```
 import matplotlib.pyplot as plt
 import numpy as np
