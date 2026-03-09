@@ -39,3 +39,15 @@ We want to play with stereo audio since many of the fun applications of matrices
 
 ```
 Here are some example matrices, *swapLRmatrix* will swap Left and Right audio channels when you matrix multiply it with your audio array, *MuteRight* will mute the Right audio channel, *MuteLeft* will mute the left one and *ScalarMatrix* will scale the left with 2 and the right with 0.5
+
+** The real fun begins when we CHAIN these operations together ** 
+Lets say we want to do maaany operations, we want to scale one, then swap, then mute we can chain all of these together. The signal all the way to the right is given by:
+``` ScaleAndSwap = ScalarMatrix @ swapLRmatrix ```
+Here we chain two matrices so that when we later do
+```manipulated_signal2 = signal @ ScaleAndSwap`` 
+BOTH the Scale operation and the Swap Left and Right Operation is executed, when we only did one matrix manipulation. This is one of the coolest uses of matrices.
+<img width="1757" height="767" alt="image" src="https://github.com/user-attachments/assets/5dee3b62-1fcb-4761-93cc-c46ed0edacb2" />
+
+The one on the left is the original signal, the one in the middle the left audio stream is scaled by two, and the right audio stream is scaled by 0.5. In the rightmost signal both the scale operation and swap of left and right is done to the original signal!
+
+The full code is in the github repository!
